@@ -1,0 +1,61 @@
+{
+    "supabase url key": {
+        "prefix": "!sburl",
+        "body": [
+            "supabase: {",
+                "url: 'YOUR_SUPABASE_URL',",
+                "key: 'YOUR_SUPABASE_KEY',",
+            "},"
+        ],
+        "description": "snippet for supabase url and key "
+      },
+    "fetch data" : {
+        "prefix": "!fdata",
+        "body" : [
+            "middleware: 'authenticated',",
+            "async asyncData({ $supabase }) {",
+            " const { data } = await $supabase.from('recipes').select('*')",
+              "  return { recipes: data }",
+            "},"
+        ],
+        "description": "snippet for fetching data from db" 
+
+    },
+    "signin authentication" : {
+        "prefix": "!auth",
+        "body": [
+           " this.$supabase.auth",
+				".signIn({",
+					"email: this.email,",
+					"password: this.password,",
+				"})",
+				".then(({ error, data }) => {",
+					"if (error) {",
+						"alert(error.message)",
+					"} else {",
+						"this.$router.push('/')",
+					"}",
+				"})"
+        ],
+        "description": "snippet for signin authentication from supabase"
+    
+    },
+    "signout authentication" : {
+        "prefix": "!soauth",
+        "body": [
+           " this.$supabase.auth",
+				".signOut({",
+					"email: this.email,",
+					"password: this.password,",
+				"})",
+				".then(({ error, data }) => {",
+					"if (error) {",
+						"alert(error.message)",
+					"} else {",
+						"this.$router.push('/signin')",
+					"}",
+				"})"
+        ],
+        "description": "snippet for signout authentication from supabase"
+    }
+}

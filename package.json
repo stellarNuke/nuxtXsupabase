@@ -1,0 +1,24 @@
+{
+    "name": "nuxt-x-supabase-snippets",
+    "displayName": "nuxt X supabase snippets",
+    "description": "supabase snippets for nuxt supabase module",
+    "icon": "images/logo.png",
+    "version": "1.0",
+    "engines": {
+        "vscode": "^1.55.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [{
+                "language": "javascript",
+                "path": "./snippets/snippets.code-snippets"
+            },
+            {
+                "language": "vue",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}
